@@ -34,5 +34,6 @@ public class FirstSpringTest {
         logger.debug("我是一条调试信息");
         logger.error("我是一条错误信息");
         System.out.println("你好啊哈哈哈");
+        System.out.println("测试分支的合并");
     }
 }
