@@ -33,7 +33,7 @@ public class FirstSpringTest {
         logger.info("我是一条日志消息");
         logger.debug("我是一条调试信息");
         logger.error("我是一条错误信息");
-        System.out.println("你好");
+        System.out.println("你好，希儿");
         System.out.println("测试分支的合并");
         System.out.println("merge test");
     }
