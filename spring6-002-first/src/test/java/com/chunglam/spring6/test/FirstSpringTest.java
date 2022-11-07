@@ -38,5 +38,6 @@ public class FirstSpringTest {
         System.out.println("你好,布洛尼亚");
         System.out.println("测试分支的冲突的手动合并");
         System.out.println("merge test");
+        System.out.print("hello eden");
     }
 }
