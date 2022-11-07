@@ -33,5 +33,6 @@ public class FirstSpringTest {
         logger.info("我是一条日志消息");
         logger.debug("我是一条调试信息");
         logger.error("我是一条错误信息");
+        System.out.println("你好啊哈哈哈");
     }
 }
