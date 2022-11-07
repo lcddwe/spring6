@@ -20,6 +20,7 @@ public class FirstSpringTest {
         System.out.println(userBean);
         Object userDao = applicationContext.getBean("userDao");
         System.out.println(userDao);
+        System.out.println("你好啊");
     }
 
     @Test
