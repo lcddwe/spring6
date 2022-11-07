@@ -35,6 +35,8 @@ public class FirstSpringTest {
         logger.error("我是一条错误信息");
         System.out.println("你好，希儿");
         System.out.println("测试分支的合并");
+        System.out.println("你好啊哈哈哈");
+        System.out.println("测试分支的冲突的手动合并");
         System.out.println("merge test");
     }
 }
