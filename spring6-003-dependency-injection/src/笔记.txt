@@ -1,0 +1,48 @@
+jdk17 判断是否是简单类型底层源码：
+	/**
+	 * Check if the given type represents a "simple" value type: a primitive or
+	 * primitive wrapper, an enum, a String or other CharSequence, a Number, a
+	 * Date, a Temporal, a URI, a URL, a Locale, or a Class.
+	 * <p>{@code Void} and {@code void} are not considered simple value types.
+	 * @param type the type to check
+	 * @return whether the given type represents a "simple" value type
+	 * @see #isSimpleProperty(Class)
+	 */
+	public static boolean isSimpleValueType(Class<?> type) {
+		return (Void.class != type && void.class != type &&
+				(ClassUtils.isPrimitiveOrWrapper(type) ||
+				Enum.class.isAssignableFrom(type) ||
+				CharSequence.class.isAssignableFrom(type) ||
+				Number.class.isAssignableFrom(type) ||
+				Date.class.isAssignableFrom(type) ||
+				Temporal.class.isAssignableFrom(type) ||
+				URI.class == type ||
+				URL.class == type ||
+				Locale.class == type ||
+				Class.class == type));
+	}
+    Temporal是Java8之后的新特性，为时区
+	检查给定类型是否表示“简单”值类型：
+	原始或原始包装器、枚举、字符串或其他 CharSequence、数字、日期、时间、URI、URL、区域设置或类。
+	 void 和 void 不被视为简单的值类型。
+	 参数：type - 要检查的类型
+	 返回：给定类型是否表示“简单”值类型
+	 另见：isSimpleProperty(Class)
+
+    通过源码分析得知，简单类型包括：
+    ● 基本数据类型
+    ● 基本数据类型对应的包装类
+    ● String或其他的CharSequence子类
+    ● Number子类
+    ● Date子类
+    ● Enum子类
+    ● URI
+    ● URL
+    ● Temporal子类
+    ● Locale
+    ● Class
+    ● 另外还包括以上简单值类型对应的数组类型。
+
+    /需要注意的是：
+     ● 如果把Date当做简单类型的话，日期字符串格式不能随便写。格式必须符合Date的toString()方法格式。显然这就比较鸡肋了。如果我们提供一个这样的日期字符串：2010-10-11，在这里是无法赋值给Date类型的属性的。
+     ● spring6之后，当注入的是URL，那么这个url字符串是会进行有效性检测的。如果是一个存在的url，那就没问题。如果不存在则报错。

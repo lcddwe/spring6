@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        p命名空间注入注入简单数据类型,给简单数据类型注入数据不能使用ref，要使用value属性或者value标签
+        注入非简单类型数据使用ref来指定，比如属性是另一个类的对象
+    -->
+    <bean id="userBean" class="com.chunglam.spring6.bean.User" p:userName="seele" p:password="520" p:age="18"/>
+
+    <!--注意：value后面的日期字符串格式不能随便写，必须是Date对象toString()方法执行的结果。-->
+    <!--如果想使用其他格式的日期字符串，就需要进行特殊处理了。具体怎么处理，可以看后面的课程！！！！-->
+    <!--spring6之后，会自动检查url是否有效，如果无效会报错。-->
+    <!--java.util.Locale 主要在软件的本地化时使用。它本身没有什么功能，更多的是作为一个参数辅助其他方法完成输出的本地化。-->
+    <bean id="simpleType" class="com.chunglam.spring6.bean.SimpleValueType"
+          p:b="1" p:b1="2"
+          p:s="1" p:s1="2"
+          p:c="a" p:c1="a"
+          p:i="1" p:i1="2"
+          p:f="1" p:f1="2"
+          p:d="1" p:d1="2"
+          p:l="1" p:l1="2"
+          p:flag="false" p:flag1="true"
+          p:str="seele"
+          p:date="Fri Sep 30 15:26:38 CST 2022"
+          p:season="AUTUMN"
+          p:uri="/save.do"
+          p:url="https://www.baidu.com"
+          p:localDate="EPOCH"
+          p:locale="CHINESE"
+          p:clazz="java.lang.String"/>
+
+
+
+
+</beans>
