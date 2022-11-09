@@ -11,6 +11,7 @@
     <bean id="userBean" class="com.chunglam.spring6.bean.User" p:userName="seele" p:password="520" p:age="18"/>
 
     <!--注意：value后面的日期字符串格式不能随便写，必须是Date对象toString()方法执行的结果。-->
+    <!--在实际的开发中，一般也不会把date当做简单类型来处理，一般使用ref进行赋值 -->
     <!--如果想使用其他格式的日期字符串，就需要进行特殊处理了。具体怎么处理，可以看后面的课程！！！！-->
     <!--spring6之后，会自动检查url是否有效，如果无效会报错。-->
     <!--java.util.Locale 主要在软件的本地化时使用。它本身没有什么功能，更多的是作为一个参数辅助其他方法完成输出的本地化。-->
